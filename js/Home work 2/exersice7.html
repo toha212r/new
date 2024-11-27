@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>File Upload Progress Bar</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      background-color: #f4f4f9;
+      margin: 0;
+    }
+
+    .progress-container {
+      text-align: center;
+      width: 300px;
+      padding: 20px;
+      background-color: #ffffff;
+      border-radius: 8px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    .progress-label {
+      font-size: 18px;
+      margin-bottom: 10px;
+    }
+
+    progress {
+      width: 100%;
+      height: 30px;
+    }
+
+    /* Optional style for progress bar color */
+    progress[value] {
+      background-color: #e0e0e0;
+    }
+    progress[value="50"] {
+      background-color: #ff9800;
+    }
+    progress[value="100"] {
+      background-color: #4caf50;
+    }
+
+  </style>
+</head>
+<body>
+
+  <div class="progress-container">
+    
+    <div class="progress-label" id="progress-label">50% Completed</div>
+    
+   
+    <progress id="upload-progress" value="50" max="100"></progress>
+  </div>
+
+  <script>
+    
+    let progressBar = document.getElementById("upload-progress");
+    let progressLabel = document.getElementById("progress-label");
+
+    let currentProgress = 50;
+
+    // Function to update the progress
+    function simulateUploadProgress() {
+      let interval = setInterval(function() {
+        if (currentProgress < 100) {
+          currentProgress += 5;
+          progressBar.value = currentProgress;
+          progressLabel.textContent = currentProgress + "% Completed";
+        } else {
+          clearInterval(interval);
+        }
+      }, 500); // Update every 0.5 seconds
+    }
+
+    // Start the progress simulation when the page loads
+    window.onload = simulateUploadProgress;
+  </script>
+
+</body>
+</html>
