@@ -1,0 +1,39 @@
+#asd{
+   color: red;
+}
+#qwer{
+    background-color: blue;
+}
+h1{
+    font-size: 24px;
+}
+#awd{
+    text-align: center;
+}
+img{
+    border-bottom: 15cm;
+}
+div{
+    text-align: center;
+    width: 500px;
+     border: 1px;
+      color: black;
+}
+p{
+    font-family: Arial, Helvetica, sans-serif;
+}
+strong{
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+}
+a {
+    text-decoration: none; 
+    padding: 8px 16px; 
+    background-color:aliceblue;
+    color: purple;  
+    border-radius: 4px; 
+  }
+  a:hover {
+    background-color: red; 
+    color: white;
+  }
+  
